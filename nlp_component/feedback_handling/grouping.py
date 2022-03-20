@@ -8,10 +8,10 @@ from scipy import spatial
 
 # load a small german pipeline
 try:
-    nlp = spacy.load("de_core_news_lg")
+    nlp = spacy.load("de_core_news_md")
 except:  # If not present, we download
-    spacy.cli.download("de_core_news_lg")
-    nlp = spacy.load("de_core_news_lg")
+    spacy.cli.download("de_core_news_md")
+    nlp = spacy.load("de_core_news_md")
 
 
 
