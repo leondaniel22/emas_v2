@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-s1tc&n=*t7baxvvqsu_umelvcr)3(=b9!y42q62k&p)i5!syjw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # only for production
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['https://emasv2.herokuapp.com/', 'emasv2.herokuapp.com', 'localhost', '127.0.0.1']
 
