@@ -21,7 +21,6 @@ django-font-awesome==4.6.1
 django-heroku==0.3.1
 django-icons==4.0.0
 django-import-export==2.5.0
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.2.0/en_core_web_sm-3.2.0-py3-none-any.whl
 et-xmlfile==1.1.0
 fontawesome-free==5.15.4
 gensim==4.1.2
