@@ -1,0 +1,26 @@
+
+#admin_sites_navbar {
+  padding-right: 0;
+}
+#admin_sites_navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#admin_sites_navbar li {
+  list-style-type: none;
+  float: left;
+}
+
+#admin_sites_navbar li a {
+  display: block;
+  text-align: center;
+  padding-right: 2em;
+  padding-top: 3.5%;
+  font-size: 1.05em;
+  text-decoration: none;
+}
+
+

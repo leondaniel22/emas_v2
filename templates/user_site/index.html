@@ -1,0 +1,55 @@
+{% extends "user_site/user_layout.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<div>
+    <h4>{% translate "Which" %} <strong>{% translate "error category" %}</strong> {% translate "is present?" %}</h4>
+</div>
+<div class="row">
+    {% for err_cat in error_categories %}
+    <div style="padding: 0.5%;">
+        <a class="rounded-3 border-1 border-info card-header card bg-white text-dark" data-bs-toggle="collapse" href="#err_cat_{{ err_cat.pk }}" role="button">
+        {{ err_cat.name }}
+        </a>
+        <div class="collapse col-sm-9" id="err_cat_{{ err_cat.pk }}" style="padding: 1em;">
+            {% for err_app in error_appearances %}
+            {%  if err_app.error_category_id == err_cat.pk  %}
+            <div class="p-2 mt-3 mb-3 rounded-3 bg-white border-dark">
+                <div class="col-md-2">
+                    <img class="shadow-lg rounded-3 img-fluid" src="{{ err_app.media.url }}" alt="">
+                </div>
+                <br>
+                <div class="col-md-10 " style="text-align: justify;">
+                    <strong>{% translate "Title:" %} </strong>
+                    <span>{{ err_app.name }}</span>
+                    <br>
+                    <strong>{% translate "Error location:" %} </strong>
+                    <span>{{ err_app.get_locations }}</span>
+                    <br>
+                    <br>
+                    {% if err_app.description %}
+                    <strong>{% translate "Problem description:" %} </strong>
+                    <span>{{ err_app.description }}</span>
+                    {% endif %}
+                </div>
+                <br>
+                <div class="col-md-2 col-md-offset-10">
+                    <form action="{% url 'solution' %}" method="POST">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="hidden" name="err_app" value="{{ err_app.pk }}">
+                        <button class="rounded-3 btn btn-outline-info "type="submit">{% translate "Continue" %}</button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+{% endblock %}
+
+
+

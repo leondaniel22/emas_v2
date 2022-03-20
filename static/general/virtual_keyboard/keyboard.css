@@ -1,0 +1,136 @@
+body > div.container {
+    max-height: 65%; /* as .virtualKeyboardContainer has height 30% */
+}
+
+    body > div.container > div > form {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+.imgcontainer {
+    margin: 0 !important;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .imgcontainer img.avatar {
+        width: 25%;
+        max-width: 150px;
+    }
+
+body > div.container > div > form > div.container {
+    margin-top: 0 !important;
+}
+ 
+
+#invisibleBox {
+    display: block; 
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+
+
+input[type=text].virtualKeyboard.focus,
+textarea.virtualKeyboard.focus {
+    outline: 0;
+    border-color: #2a67b0;
+    box-shadow: 0 0 10px #2a67b0;
+    transition-property: border-color,box-shadow
+}
+
+div.virtualKeyboardContainer {
+    display: table;
+    background-color: lightsteelblue;
+    -webkit-box-shadow: 3px 3px 6px #181818;
+    box-shadow: 3px 3px 6px #181818;
+    border: 1px solid #5D5D5D;
+    border-radius: 6px;
+    padding: 4px;
+    z-index: 4;
+    width: 100%;
+    height: 30%;
+    position: fixed; /* Stay in place */
+    overflow: auto; /* Enable scroll if needed */
+    bottom: 0vh;
+}
+
+div.virtualKeyboardRow {
+    display: table-row;
+    text-align: center;
+}
+
+button.virtualKeyboardBtn {
+    color: black;
+    background-color: white;
+    line-height: 2.25em;
+    min-width: 36px;
+    margin: 0;
+    padding: 1px 6px 1px 6px;
+    border: 1px solid darkgrey;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 100%;
+    outline: none;
+    cursor: pointer;
+}
+
+    button.virtualKeyboardBtn:hover {
+        background: #26b3f7;
+    }
+
+    button.virtualKeyboardBtn:active,
+    button.virtualKeyboardBtn.shift-active,
+    button.virtualKeyboardBtn.altgr-active {
+        background-color: lightskyblue;
+    }
+
+    button.virtualKeyboardBtn.disabled {
+        color: white;
+        background: white;
+        background-image: -ms-linear-gradient(#939393, #939393);
+        background-image: -webkit-linear-gradient(#939393, #939393);
+        opacity: 0.9;
+        filter: alpha(opacity=90);
+    }
+
+    button.virtualKeyboardBtn.ui-button-colspan-0 {
+        width: 6.8%;
+        height: 100%;
+    }
+
+    button.virtualKeyboardBtn.ui-button-colspan-2 {
+        width: 12%;
+        height: 100%;
+    }
+
+    button.virtualKeyboardBtn.ui-button-colspan-3 {
+        width: 13%;
+        height: 100%;
+    }
+
+    button.virtualKeyboardBtn.ui-button-colspan-6 {
+        width: 19%;
+        height: 100%;
+    }
+
+    button.virtualKeyboardBtn.ui-button-colspan-12 {
+        width: 50%;
+        height: 100%;
+    }
+
+    html,
+    body,
+    body > div.container,
+    body > div.container > div,
+    body > div.container > div > form {
+        height: 100%;
+    }
+

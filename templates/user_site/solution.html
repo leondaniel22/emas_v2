@@ -1,0 +1,86 @@
+{% extends "user_site/user_layout.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div>
+    <h4>{% translate "Choose a" %} <strong>{% translate "solution" %}</strong>: </h4>
+</div>
+    <div class="row">
+        {% for sol in solutions %}
+        <div style="padding: 0.5%;">
+            <a class="rounded-3 border-1 border-info card-header card bg-white text-dark" data-bs-toggle="collapse" href="#sol_{{ sol.pk }}">
+            {{ sol.name }}
+            </a>
+            <div id="sol_{{ sol.pk }}" class="col-sm-9 collapse" style="padding: 1em;">
+                <div class="p-2 mt-3 mb-3 rounded-3 bg-white border-dark">
+                    <div class="col-md-2">
+                        <img class="shadow-lg rounded-3 img-fluid" src="{{ sol.media.url }}" alt="Bild kommt bald ...">
+                    </div>
+                    <br>
+                    <div class="col-md-10 " style="text-align: justify;">
+                        {% if sol.rating >= 0 %}
+                            <h4>{{ sol.name }} [ <span style="color: #478500"><i class="fas fa-thumbs-up"></i> {{ sol.rating }}</span> ]</h4>
+                        {% else %}
+                            <h4>{{ sol.name }} [ <span style="color: #993333"><i class="fas fa-thumbs-down"></i> {{ sol.rating }}</span> ]</h4>
+                        {% endif %}
+                        <br>
+                        <p><strong>{% translate "Error appearance" %}: </strong>{{ sol.error_appearance.name }}</p>
+                        {% if sol.description %}
+                        <strong>{% translate "Description" %}: </strong>
+                        <span>{{ sol.description }}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div class="col-md-6 col-md-offset-10">
+
+                        <strong>{% translate "Was this solution helpful?" %} </strong>
+                        <form action="{% url 'rating' %}" method="POST">
+                            {% csrf_token %}
+                            {{ form }}
+                            <div class="btn-group p-3">
+                                <input type="hidden" name="sol" value="{{ sol.pk }}">
+                                <button class="rounded-2 m-1 col-md-3 btn btn-outline-success "type="submit" style="width:100%" name="positive" value="positive">
+                                    {% translate "Yes" %}! <i class="fas fa-thumbs-up"></i>
+                                </button>
+                                <button class="rounded-2 m-1 col-md-3 btn btn-outline-danger "type="submit" style="width:100%" name="negative" value="negative">
+                                    {% translate "No" %}! <i class="fas fa-thumbs-down"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <br>
+                        </div>
+                </div>
+            </div>
+            <br>
+
+        {% endfor %}
+        {% if not search_process %}
+            <a class="rounded-3 border-1 border-info card-header card bg-white text-dark" data-bs-toggle="collapse" href="#no_sol">
+            {% translate "None of these solutions" %}
+            </a>
+            <div id="no_sol" class="collapse" style="padding: 1em;">
+                <div class="p-2 mt-3 mb-3 rounded-3 bg-white border-dark">
+                    <br>
+                    <div class="col-md-18 col-md-offset-10">
+                        <p class="font-weight-light"style="color: #6c757d;"><i class="fas fa-info-circle"></i> {% translate "Please avoid long sentences and stick to short comments!" %}</p>
+                        <form action="{% url 'user_comment' %}" method="POST">
+                            {% csrf_token %}
+                            {{ user_comment_form }}
+                            <input type="hidden" name="err_app" value="{{ solutions.0.error_appearance_id}}">
+                            <br>
+                            <button class="rounded-3 btn btn-outline-success "type="submit" >
+                                <span class="glyphicon glyphicon-minus"></span>{% translate "Send" %}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+<br>
+
+
+{% endblock %}
+

@@ -1,0 +1,88 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - EMAS</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'user_site/bootstrap-5.0.2/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'user_site/bootstrap-5.0.2/css/bootstrap.css' %}" />
+    <script src="{% static 'user_site/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'user_site/bootstrap-5.0.2/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user_site/image_resizer/imageMapResizer.min.js' %}"></script>
+    <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'general/virtual_keyboard/keyboard.js' %}"></script>
+    <link href="{% static 'general/virtual_keyboard/keyboard.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
+    <script src="{% static 'user_site/scripts/respond.js' %}"></script>
+
+</head>
+
+<body data-media-url="{% get_media_prefix %}">
+    <div class="bg-white">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+            <div class="navbar-brand">
+                <a class="p-3 navbar-brand border-end border-light" onClick="window.history.back();return false;"><i class="fas fa-chevron-circle-left fa-lg"></i></a>
+            </div>
+            <a class="p-0 navbar-brand" href="{% url 'index' %}"><i class="far fa-play-circle"></i> {% translate "Start" %}</a>
+            <a class="p-2 navbar-brand  " href="{% url 'user_admin:index' %}"><i class="fa fa-user-circle" aria-hidden="true"></i> {% translate "Admin" %}</a>
+            <a class="p-2 navbar-brand order-last ms-auto" type="button" onclick="window.open('', '_self', ''); window.close();"><i class="fas fa-door-open"></i>  {% translate "Quit" %}</a>
+        </nav>
+        <div class="mapper">
+            <svg viewBox="0 0 {{ instance.routemodel.width }} {{ instance.routemodel.height }}">
+                <image id="routemodel" class="mapper" xlink:href="{{instance.routemodel.url}}" alt="routemodel" usemap="#routemodel" width="100%" height="100%" style="position: absolute"></image>
+                {{ instance.image_map | safe }}
+            </svg>
+        </div>
+        <hr>
+        <div class="mb-5 mt-0 me-3 float-end">
+            <form action="{% url 'search_process' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <div class="form-outline">
+                        {{ search_form.search_field }}
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div>
+                        {{ search_form.search_area }}
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+    </div>
+    <div class="mt-4 p-4 body-content bg-light">
+{% block content %}{% endblock %}
+        <hr/>
+        <footer class="bg-light">
+            <p>&copy; {{ date }} - EMAS</p>
+        </footer>
+    </div>
+
+<script>
+    //imageMapResize();
+    $("input:text").addClass("virtualKeyboard")
+    {%  if locations %}
+    function highlight_map() {
+        for (var i = 0, area = document.getElementsByClassName("routemodel_area");i < area.length ;i++) {
+            var highlighted = false;
+            {% for location in locations %}
+                var id = {{ location.id | safe }}
+                if (area[i].id == id.toString()) {
+                    highlighted = true;
+                }
+            {% endfor %}
+            if (!highlighted) {
+                area[i].style.opacity = 0.8;
+            }
+        }
+    }
+    $(highlight_map);
+    {% endif %}
+</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

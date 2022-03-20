@@ -1,0 +1,68 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% block content %}
+    <br>
+    <hr>
+    <br>
+    <div id="import" class="collapse">
+        <h3>Import</h3>
+        <div id="excelFile" class="col-md-12 border-bottom border-top border-info font-italic">
+            <h5 class="font-weight-bold"><i style="color: forestgreen;" class="fa fa-info-circle"></i> {% translate "General Information" %}</h5>
+            <ul>
+                <li>{% blocktranslate %}Here new data can be added via an Excel table {% endblocktranslate %}</li>
+                <li>{% blocktranslate %}Any number of data can be added at once {% endblocktranslate %}</li>
+            </ul>
+            <h5 class="font-weight-bold"><i style="color: red;" class="fa fa-exclamation-triangle"></i>{% blocktranslate %} Please observe the following rules: {% endblocktranslate %}</h5>
+            <ul>
+                <li>{% translate "Please stick to the given" %} <i class="font-weight-bold">.xlsx</i> {% translate "format" %}</li>
+                <li>{% translate "You can download a template for the format" %} <a style="color: darkgreen; font-weight: bold;"href="{% url 'admin:template' %}">{% translate "here" %} <i class="fa fa-download"></i></a></li>
+                <li>{% translate "Images must be added separately via - Error appearance - or - Solution -" %} </li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <div class="form-row">
+            <form action="{% url 'admin:import_data_confirm' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ upload_form }}
+                <br>
+                <br>
+                {{ instance_form }}
+                <br>
+                <br>
+
+
+                <input type="submit"  name="confirm" value="Upload">
+            </form>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div id="export" class="collapse">
+        <h3>Export</h3>
+        <div id="exportFile" class="col-md-12 border-bottom border-top border-info font-italic">
+            <h5 class="font-weight-bold"><i style="color: forestgreen;" class="fa fa-info-circle"></i> {% translate "General information" %}</h5>
+            <ul>
+                <li>{% translate "Here the data can be seen and downloaded" %}</li>
+            </ul>
+            <h5 class="font-weight-bold"><i style="color: red;" class="fa fa-exclamation-triangle"></i> {% translate "The following data will be downloaded: " %}</h5>
+            <ul>
+                <li>{% translate "Error category" %}</li>
+                <li>{% translate "Error appearance" %}</li>
+                <li>{% translate "Location" %}</li>
+                <li>{% translate "Solution" %}</li>
+            </ul>
+        </div>
+        <br>
+        <div class="form-row">
+            <form action="{% url 'admin:export_data' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ instance_form }}
+                <br>
+                <br>
+                <input type="submit"  name="confirm" value="Download">
+            </form>
+        </div>
+    </div>
+{% endblock %}

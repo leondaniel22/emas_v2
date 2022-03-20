@@ -1,0 +1,111 @@
+{% load i18n static %}
+<link href="{% static 'admin/css/custom_base.css' %}" rel="stylesheet" type="text/css"><script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
+<script src="{% static 'user_site/scripts/jquery-1.10.2.js' %}"></script>
+<script src="{% static 'admin/image_map_creator/easy-mapper-1.2.0.js' %}" type="text/javascript"></script>
+<link href="{% static 'admin/image_map_creator/easy-mapper.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'user_site/scripts/respond.js' %}"></script>
+<script src="{% static 'user_site/bootstrap-5.0.2/js/bootstrap.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'user_site/bootstrap-5.0.2/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'user_site/bootstrap-5.0.2/css/bootstrap.css' %}" />
+<!-- 딤 스크린 -->
+<div id="dim"></div>
+
+<div class="pop" id="pop-code">
+	<p class="pop-title">{% translate "Image Map created" %}</p>
+	<div class="pop-btn">
+        <div class="pop-btn-copy pop-btn-cancel" id="pop-btn-copy-a">{% translate "Show" %}</div>
+		<div class="pop-btn-cancel _full">{% translate "Quit" %}</div>
+	</div>
+</div>
+
+<div class="pop" id="pop-codegen-a">
+	<p class="pop-title">{% translate "Image Map" %}</p>
+	<div class="pop-content">
+		<p></p>
+	</div>
+    <form action="{% url 'admin:add_image_map' instance_id=instance.pk%}" method="POST">
+        {% csrf_token %}
+        {{ image_map_form.as_p }}
+        <div class="pop-btn-confirm" onclick="javascript:document.forms[0].submit();">{% translate "Save" %}</div>
+        <div class="pop-btn-cancel">{% translate "Quit" %}</div>
+    </form>
+</div>
+
+<div class="pop" id="pop-codegen-im">
+	<p class="pop-title">IMAGE MAP FORM</p>
+	<div class="pop-content">
+		<p></p>
+	</div>
+	<div class="pop-btn-cancel _back">{% translate "Back" %}</div>
+	<div class="pop-btn-cancel">{% translate "Quit" %}</div>
+    <form action="{% url 'admin:add_image_map' instance_id=instance.pk%}" method="POST">
+        {% csrf_token %}
+        {{ image_map_form }}
+        <button class="pop-btn-confirm"type="submit">{% translate "Save" %}</button>
+    </form>
+</div>
+
+<div class="pop" id="pop-addlink">
+	<p class="pop-title">{% translate "Add URL Link" %}</p>
+	<div class="pop-content">
+        {{map_creator_form}}
+		<label><input style="display:none" type="radio" name="pop-addlink-target" value="_self" checked="true"></label>
+	</div>
+	<div class="pop-btn">
+		<div class="pop-btn-confirm">{% translate "Add URL Link" %}</div>
+		<div class="pop-btn-cancel">{% translate "Cancel" %}</div>
+	</div>
+</div>
+
+<!-- 헤더 -->
+<div id="gnb">
+    <a id="gnb-title" href="../../user_site/instance/{{ instance.pk }}"><- {% translate "Back" %}</a>
+	<a id="gnb-title" href="{% url 'admin:image_map_creator' instance_id=instance.pk %}" onclick="if (!confirm('Do you want to reset all the changes?')) return false;">&#8635; {% translate "Refresh" %}</a>
+
+	<!-- 드롭다운 메뉴 -->
+	<ul id="gnb-menu">
+		<li id="gnb-menu-measure">
+			<span>Methode &#9662;</span>
+			<ul class="gnb-menu-sub _toggle">
+				<li id="gnb-menu-drag" class="_active">Drag<em>&nbsp;&#10003;</em></li>
+				<li id="gnb-menu-click">Click<em>&nbsp;&#10003;</em></li>
+			</ul>
+		</li>
+		<li id="gnb-menu-clear">
+			<span>{% translate "Remove" %}</span>
+		</li>
+		<li id="gnb-menu-generate">
+			<span>{% translate "Create" %}</span>
+		</li>
+	</ul>
+</div>
+
+<!-- 작업공간 -->
+<div id="workspace">
+	<!-- 눈금자 -->
+	<div id="workspace-ruler">
+		<div id="workspace-ruler-x">
+			<div id="workspace-ruler-x-2"></div>
+			<div id="workspace-ruler-x-1"></div>
+		</div>
+		<div id="workspace-ruler-y">
+			<div id="workspace-ruler-y-2"></div>
+			<div id="workspace-ruler-y-1"></div>
+		</div>
+	</div>
+
+	<!-- 이미지 -->
+	<div id="workspace-img-wrap">
+		<img id="workspace-img" src="{{instance.routemodel.url}}">
+
+		<!-- 그리드 -->
+		<div id="grid-x1" class="grid-1"></div>
+		<div id="grid-y1" class="grid-1"></div>
+		<div id="grid-x2" class="grid-2"></div>
+		<div id="grid-y2" class="grid-2"></div>
+		<span id="grid-coords"></span>
+	</div>
+
+</div>
+
+</body></html>

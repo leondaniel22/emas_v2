@@ -1,0 +1,544 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-01 02:07+0100\n"
+"PO-Revision-Date: 2022-03-01 02:44+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: .\emas_v2\settings.py:129 .\user_site\forms.py:11
+msgid "German"
+msgstr "Deutsch"
+
+#: .\emas_v2\settings.py:130 .\user_site\forms.py:10
+msgid "English"
+msgstr "Englisch"
+
+#: .\nlp_component\admin.py:10 .\nlp_component\admin.py:11
+#: .\nlp_component\admin.py:12 .\templates\admin\base.html:48
+msgid "Comment management"
+msgstr "Kommentarverwaltung"
+
+#: .\nlp_component\admin.py:35 .\nlp_component\models.py:36
+#: .\nlp_component\models.py:45 .\nlp_component\models.py:52
+msgid "Sentence"
+msgstr "Satz"
+
+#: .\nlp_component\admin.py:36
+msgid "User Comments"
+msgstr "Lösungsvorschläge"
+
+#: .\nlp_component\admin.py:58 .\nlp_component\models.py:38
+msgid "Group"
+msgstr "Gruppe"
+
+#: .\nlp_component\admin.py:63 .\nlp_component\models.py:30
+msgid "Group of user comments"
+msgstr "Gruppe von Lösungsvorschlägen"
+
+#: .\nlp_component\admin.py:64
+msgid "Amount of user comments"
+msgstr "Anzahl von Lösungsvorschlägen"
+
+#: .\nlp_component\models.py:12 .\nlp_component\models.py:26
+#: .\templates\admin\import_export_data.html:50
+#: .\templates\user_site\error_appearance.html:6
+#: .\templates\user_site\solution.html:28 .\user_site\admin.py:392
+#: .\user_site\forms.py:81 .\user_site\models.py:99 .\user_site\models.py:108
+msgid "Error appearance"
+msgstr "Erscheinungsbild"
+
+#: .\nlp_component\models.py:14
+msgid "create date"
+msgstr "Erstellungsdatum"
+
+#: .\nlp_component\models.py:20
+msgid "New user comment"
+msgstr "Neuer Lösungsvorschlag"
+
+#: .\nlp_component\models.py:21 .\user_site\admin.py:427
+msgid "New user comments"
+msgstr "Neue Lösungsvorschläge"
+
+#: .\nlp_component\models.py:31 .\user_site\admin.py:428
+msgid "Groups of user comments"
+msgstr "Gruppen von Lösungsvorschlägen"
+
+#: .\nlp_component\models.py:37
+msgid "Content"
+msgstr "Inhalt"
+
+#: .\nlp_component\models.py:39
+msgid "User comment"
+msgstr "Lösungsvorschlag"
+
+#: .\nlp_component\models.py:46
+msgid "Sentences"
+msgstr "Sätze"
+
+#: .\nlp_component\models.py:51
+msgid "Lemma"
+msgstr "Lemma"
+
+#: .\nlp_component\models.py:55
+msgid "Keyword"
+msgstr "Schlüsselwort"
+
+#: .\nlp_component\models.py:56
+msgid "Keywords"
+msgstr "Schlüsselwörter"
+
+#: .\nlp_component\models.py:62
+msgid "Value"
+msgstr "Wert"
+
+#: .\nlp_component\models.py:65
+msgid "Similarity threshold"
+msgstr "Ähnlichkeitsschwellenwert"
+
+#: .\nlp_component\models.py:66
+msgid "Similarity thresholds"
+msgstr "Ähnlichkeitsschwellenwerte"
+
+#: .\templates\admin\action_instance.html:17
+msgid "Change instance"
+msgstr "Instanz ändern"
+
+#: .\templates\admin\action_instance.html:22
+msgid "current instance"
+msgstr "Aktuelle Instanz"
+
+#: .\templates\admin\base.html:46 .\user_site\admin.py:20
+#: .\user_site\admin.py:21 .\user_site\admin.py:22
+msgid "Website management"
+msgstr "Website-Verwaltung"
+
+#: .\templates\admin\base.html:47
+msgid "Knowledge management"
+msgstr "Wissensmanagement"
+
+#: .\templates\admin\base.html:57
+msgid "Welcome,"
+msgstr "Willkommen,"
+
+#: .\templates\admin\base.html:64
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: .\templates\admin\base.html:68
+msgid "Change password"
+msgstr "Passwort ändern"
+
+#: .\templates\admin\base.html:70
+msgid "Back to program"
+msgstr "Zurück zur Anwendung"
+
+#: .\templates\admin\base.html:71
+msgid "Log out"
+msgstr "Abmelden"
+
+#: .\templates\admin\base.html:72 .\templates\admin\image_map_creator.html:17
+#: .\templates\admin\image_map_creator.html:30
+#: .\templates\admin\image_map_creator.html:40
+#: .\templates\user_site\user_layout.html:43
+msgid "Quit"
+msgstr "Beenden"
+
+#: .\templates\admin\base.html:97
+#: .\templates\admin\change_form_instance.html:18
+msgid "Home"
+msgstr "Start"
+
+#: .\templates\admin\change_form_instance.html:21
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: .\templates\admin\change_form_instance.html:43
+msgid "Please correct the error below."
+msgstr "Bitte den untenstehenden Fehler beheben."
+
+#: .\templates\admin\change_form_instance.html:43
+msgid "Please correct the errors below."
+msgstr "Bitte die untenstehenden Fehler beheben."
+
+#: .\templates\admin\image_map_creator.html:14
+msgid "Image Map created"
+msgstr "Image Map wurde erzeugt"
+
+#: .\templates\admin\image_map_creator.html:16
+msgid "Show"
+msgstr "Zeigen"
+
+#: .\templates\admin\image_map_creator.html:22
+msgid "Image Map"
+msgstr "Image Map"
+
+#: .\templates\admin\image_map_creator.html:29
+#: .\templates\admin\image_map_creator.html:44
+msgid "Save"
+msgstr "Speichern"
+
+#: .\templates\admin\image_map_creator.html:39
+#: .\templates\admin\image_map_creator.html:62
+msgid "Back"
+msgstr "Zurück"
+
+#: .\templates\admin\image_map_creator.html:49
+#: .\templates\admin\image_map_creator.html:55
+msgid "Add URL Link"
+msgstr "URL Link hinzufügen"
+
+#: .\templates\admin\image_map_creator.html:56
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: .\templates\admin\image_map_creator.html:63
+msgid "Refresh"
+msgstr "Aktualisieren"
+
+#: .\templates\admin\image_map_creator.html:75
+msgid "Remove"
+msgstr "Entfernen"
+
+#: .\templates\admin\image_map_creator.html:78
+msgid "Create"
+msgstr "Erstellen"
+
+#: .\templates\admin\import_data_confirm.html:6
+msgid ""
+"Below is a preview of the data to be imported. If the results are "
+"satisfactory, click -Confirm Import-."
+msgstr ""
+"Nachfolgend sehen Sie eine Vorschau der zu importierenden Daten. Wenn die "
+"Ergebnisse zufriedenstellend sind, klicken Sie auf -Import bestätigen-."
+
+#: .\templates\admin\import_data_confirm.html:11
+msgid "Preview"
+msgstr "Vorschau"
+
+#: .\templates\admin\import_data_confirm.html:17 .\user_site\models.py:23
+#: .\user_site\models.py:48 .\user_site\models.py:66
+msgid "Instance"
+msgstr "Instanz"
+
+#: .\templates\admin\import_data_confirm.html:44
+msgid "Confirm import"
+msgstr "Import bestätigen"
+
+#: .\templates\admin\import_export_data.html:10
+msgid "General Information"
+msgstr "Allgemeine Informationen"
+
+#: .\templates\admin\import_export_data.html:12
+msgid "Here new data can be added via an Excel table "
+msgstr "Hier können neue Daten über eine Excel-Tabelle hinzugefügt werden "
+
+#: .\templates\admin\import_export_data.html:13
+msgid "Any number of data can be added at once "
+msgstr "Es können beliebig viele Daten auf einmal hinzugefügt werden "
+
+#: .\templates\admin\import_export_data.html:15
+msgid " Please observe the following rules: "
+msgstr "Bitte beachten Sie die folgenden Regeln: "
+
+#: .\templates\admin\import_export_data.html:17
+msgid "Please stick to the given"
+msgstr "Bitte halten Sie sich an das vorgegebene"
+
+#: .\templates\admin\import_export_data.html:17
+msgid "format"
+msgstr "Format"
+
+#: .\templates\admin\import_export_data.html:18
+msgid "You can download a template for the format"
+msgstr "Sie können eine Vorlage für das Format herunterladen"
+
+#: .\templates\admin\import_export_data.html:19
+msgid ""
+"Images must be added separately via - Error appearance - or - Solution -"
+msgstr ""
+"Bilder müssen separat über - Erscheinungsbild - oder - Lösung - hinzugefügt "
+"werden "
+
+#: .\templates\admin\import_export_data.html:19
+msgid "here"
+msgstr "Hier"
+
+#: .\templates\admin\import_export_data.html:19
+msgid "download"
+msgstr "downloaden"
+
+#: .\templates\admin\import_export_data.html:43
+msgid "General information"
+msgstr "Allgemeine Informationen"
+
+#: .\templates\admin\import_export_data.html:45
+msgid "Here the data can be seen and downloaded"
+msgstr "Hier können die Daten eingesehen und heruntergeladen werden"
+
+#: .\templates\admin\import_export_data.html:47
+msgid "The following data will be downloaded: "
+msgstr "Die folgenden Daten werden heruntergeladen: "
+
+#: .\templates\admin\import_export_data.html:49 .\user_site\admin.py:183
+#: .\user_site\admin.py:294 .\user_site\admin.py:391 .\user_site\admin.py:419
+#: .\user_site\models.py:56 .\user_site\models.py:85
+msgid "Error category"
+msgstr "Fehlerkategorie"
+
+#: .\templates\admin\import_export_data.html:51 .\user_site\admin.py:294
+#: .\user_site\admin.py:393 .\user_site\admin.py:418 .\user_site\models.py:74
+#: .\user_site\models.py:83 .\user_site\models.py:96
+msgid "Location"
+msgstr "Fehlerort"
+
+#: .\templates\admin\import_export_data.html:52 .\user_site\admin.py:294
+#: .\user_site\admin.py:394 .\user_site\models.py:116
+msgid "Solution"
+msgstr "Lösungsmaßnahme"
+
+#: .\templates\user_site\error_appearance.html:6
+#: .\templates\user_site\solution.html:7
+msgid "Choose a"
+msgstr "Wählen Sie eine"
+
+#: .\templates\user_site\error_appearance.html:16
+msgid "Title: "
+msgstr "Titel:"
+
+#: .\templates\user_site\error_appearance.html:19
+msgid "Error location: "
+msgstr "Fehlerort:"
+
+#: .\templates\user_site\error_appearance.html:24
+msgid "Problem description: "
+msgstr "Problembeschreibung:"
+
+#: .\templates\user_site\error_appearance.html:34
+#: .\templates\user_site\index.html:41
+msgid "Continue"
+msgstr "Weiter"
+
+#: .\templates\user_site\index.html:6
+msgid "Which"
+msgstr "Welche"
+
+#: .\templates\user_site\index.html:6
+msgid "error category"
+msgstr "Fehlerkategorie"
+
+#: .\templates\user_site\index.html:6
+msgid "is present?"
+msgstr "liegt vor?"
+
+#: .\templates\user_site\index.html:23
+msgid "Title:"
+msgstr "Titel:"
+
+#: .\templates\user_site\index.html:26
+msgid "Error location:"
+msgstr "Fehlerort"
+
+#: .\templates\user_site\index.html:31
+msgid "Problem description:"
+msgstr "Problembeschreibung"
+
+#: .\templates\user_site\location_pdfs.html:5 .\user_site\models.py:65
+msgid "PDF document"
+msgstr "PDF-Dokument"
+
+#: .\templates\user_site\location_pdfs.html:9
+msgid "Currently there is no pdf document available"
+msgstr "Derzeit ist kein PDF-Dokument verfügbar"
+
+#: .\templates\user_site\solution.html:7
+msgid "solution"
+msgstr "Lösungsmaßnahme"
+
+#: .\templates\user_site\solution.html:30 .\user_site\models.py:47
+#: .\user_site\models.py:64 .\user_site\models.py:82 .\user_site\models.py:105
+msgid "Description"
+msgstr "Beschreibung"
+
+#: .\templates\user_site\solution.html:37
+msgid "Was this solution helpful?"
+msgstr "War diese Lösungsmaßnahme hilfreich?"
+
+#: .\templates\user_site\solution.html:44
+msgid "Yes"
+msgstr "Ja"
+
+#: .\templates\user_site\solution.html:47
+msgid "No"
+msgstr "Nein"
+
+#: .\templates\user_site\solution.html:60
+msgid "None of these solutions"
+msgstr "Keine dieser Lösungsmaßnahmen"
+
+#: .\templates\user_site\solution.html:66
+msgid "Please avoid long sentences and stick to short comments!"
+msgstr ""
+"Bitte vermeiden Sie lange Sätze und halten Sie sich an kurze Kommentare!"
+
+#: .\templates\user_site\solution.html:73
+msgid "Send"
+msgstr "Senden"
+
+#: .\templates\user_site\user_layout.html:41
+msgid "Start"
+msgstr "Start"
+
+#: .\templates\user_site\user_layout.html:42
+msgid "Admin"
+msgstr "Admin"
+
+#: .\user_site\admin.py:87
+msgid "Change the related instance"
+msgstr "Die zugehörige Instanz ändern"
+
+#: .\user_site\admin.py:99
+msgid "Instance successfully changed"
+msgstr "Instanz erfolgreich geändert"
+
+#: .\user_site\admin.py:106
+msgid "Choose instance"
+msgstr "Instanz wählen"
+
+#: .\user_site\admin.py:264
+msgid "Data could not be imported, please contact your Administrator"
+msgstr ""
+"Daten konnten nicht importiert werden, bitte wenden Sie sich an Ihren "
+"Administrator"
+
+#: .\user_site\admin.py:326 .\user_site\admin.py:417 .\user_site\models.py:24
+msgid "Instances"
+msgstr "Instanzen"
+
+#: .\user_site\admin.py:350 .\user_site\models.py:75
+msgid "Locations"
+msgstr "Fehlerorte"
+
+#: .\user_site\admin.py:395
+msgid "Related Instance"
+msgstr "Zugehörige Instanz"
+
+#: .\user_site\admin.py:415 .\user_site\models.py:139
+msgid "Overview"
+msgstr "Übersicht"
+
+#: .\user_site\admin.py:416
+msgid "Import/Export"
+msgstr "Import/Export"
+
+#: .\user_site\admin.py:420 .\user_site\models.py:100
+msgid "Error appearances"
+msgstr "Erscheinungsbilder"
+
+#: .\user_site\admin.py:421 .\user_site\forms.py:82 .\user_site\models.py:117
+msgid "Solutions"
+msgstr "Lösungsmaßnahmen"
+
+#: .\user_site\admin.py:422
+msgid "Excel Import"
+msgstr "Excel Import"
+
+#: .\user_site\admin.py:423
+msgid "Themes"
+msgstr "Themes"
+
+#: .\user_site\admin.py:424
+msgid "Groups"
+msgstr "Gruppen"
+
+#: .\user_site\admin.py:425
+msgid "User"
+msgstr "Benutzer"
+
+#: .\user_site\admin.py:426
+msgid "Authentications"
+msgstr "Berechtigungen"
+
+#: .\user_site\admin.py:429
+msgid "similarity threshold"
+msgstr "Ähnlichkeitsschwellenwert"
+
+#: .\user_site\forms.py:28
+msgid "Available locations"
+msgstr "Verfügbare Fehlerorte"
+
+#: .\user_site\forms.py:66
+msgid "Comment"
+msgstr "Lösungsvorschläge"
+
+#: .\user_site\forms.py:70
+msgid "File"
+msgstr "Datei"
+
+#: .\user_site\forms.py:93
+msgid "Search"
+msgstr "Suche"
+
+#: .\user_site\forms.py:103
+msgid "choose Instance"
+msgstr "Instanz wählen"
+
+#: .\user_site\forms.py:107
+msgid "Choose Instance"
+msgstr "Instanz wählen"
+
+#: .\user_site\models.py:15 .\user_site\models.py:46 .\user_site\models.py:63
+#: .\user_site\models.py:81 .\user_site\models.py:104
+msgid "Name"
+msgstr "Name"
+
+#: .\user_site\models.py:16
+msgid "Routemodel"
+msgstr "Streckenbild"
+
+#: .\user_site\models.py:17
+msgid "Image-Map"
+msgstr "Image-Map"
+
+#: .\user_site\models.py:18
+msgid "Active"
+msgstr "Aktiv"
+
+#: .\user_site\models.py:19 .\user_site\models.py:49 .\user_site\models.py:67
+#: .\user_site\models.py:86 .\user_site\models.py:109
+msgid "Created date"
+msgstr "Erstellungsdatum"
+
+#: .\user_site\models.py:20 .\user_site\models.py:50 .\user_site\models.py:68
+#: .\user_site\models.py:87 .\user_site\models.py:110
+msgid "Changed date"
+msgstr "Änderungsdatum"
+
+#: .\user_site\models.py:57
+msgid "Error categories"
+msgstr "Fehlerkategorien"
+
+#: .\user_site\models.py:84 .\user_site\models.py:106
+msgid "Image/Video"
+msgstr "Bild/Video"
+
+#: .\user_site\models.py:107
+msgid "Rating"
+msgstr "Rating"
+
+#: .\user_site\models.py:140
+msgid "Overviews"
+msgstr "Übersicht"

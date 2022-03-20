@@ -1,0 +1,47 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% block content %}
+    <div>
+        <p>
+           {% translate "Below is a preview of the data to be imported. If the results are satisfactory, click -Confirm Import-." %}
+        </p>
+        <br>
+    </div>
+    <div>
+    <h2>{% translate "Preview" %}</h2>
+        <table>
+            <thead>
+                {% for header in dataset.headers%}
+                    <th>{{header}}</th>
+                {% endfor %}
+                <th>{% translate "Instance" %}</th>
+            </thead>
+        <tbody>
+            {% for row in dataset %}
+                <tr>
+                    {% for item in row %}
+                        {% if item.1 %}
+                            <td style="background-color: #fdfdcf">{{ item.0 }}</td>
+                        {% else %}
+                            <td style="background-color: darkseagreen">{{ item.0 }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    <td>{{ instance }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+        <div>
+            <form action="{% url 'admin:import_data_save' %}" method="POST">
+                {% csrf_token %}
+                {{ confirm_instance_form }}
+                <input type="hidden" name="sol" value="{{ dataset }}">
+                <br>
+                <br>
+                <input type="submit"  name="confirm" value="{% translate "Confirm import" %}">
+            </form>
+        </div>
+{% endblock %}
