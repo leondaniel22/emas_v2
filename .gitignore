@@ -4,14 +4,10 @@
 *.pyc
 __pycache__
 db.sqlite3
-media
+
 
 #idea
 .idea
-#fontawesome
-.staticfiles/fontawesome_free
-staticfiles/fontawesome_free
-fontawesome_free
 
 # Backup files # 
 *.bak 
