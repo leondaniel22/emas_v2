@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import posixpath
 import sys
+
+import django_heroku
 from django.utils.translation import ugettext_lazy as _
 import dj_database_url
 
@@ -171,4 +173,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
 
-
+django_heroku.settings(locals())
