@@ -7,7 +7,6 @@ click==8.0.3
 colorama==0.4.4
 cymem==2.0.6
 Cython==0.29.24
-de-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/de_core_news_lg-3.2.0/de_core_news_lg-3.2.0-py3-none-any.whl
 de-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.2.0/de_core_news_sm-3.2.0-py3-none-any.whl
 defusedxml==0.7.1
 diff-match-patch==20200713
