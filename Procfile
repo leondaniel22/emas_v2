@@ -1,1 +1,1 @@
-web: gunicorn emas_v2.wsgi --log-file=-
+web: gunicorn emas_v2.wsgi --log-file--
