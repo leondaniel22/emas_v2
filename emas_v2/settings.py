@@ -19,7 +19,6 @@ import django_heroku
 from django.utils.translation import ugettext_lazy as _
 import dj_database_url
 
-
 sys.modules['fontawesome_free'] = __import__('fontawesome-free')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -161,7 +160,7 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
